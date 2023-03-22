@@ -77,3 +77,19 @@ for (let i = +beginVertical + 1; i <= endVertical; i++) {
   console.log(abc[endHorizont] + pred + '-' + abc[endHorizont] + i);
   pred = i;
 }
+//пятое
+const speedAhiles = prompt('Скорость Ахилесса (м/с)?');
+const speedTurtle = prompt('Скорость черепахи (м/с)?');
+let dist = prompt('Расстояние? (в метрах)');
+const newDist = prompt('Надо приблизится на (также в метрах)?');
+let step = 0;
+while (dist > newDist) {
+  dist = (dist / speedAhiles) * speedTurtle;
+  step++;
+  if (step > 1000) {
+    step = -1;
+    break;
+  }
+}
+if (step === -1) alert('Никогда');
+else alert(step + ' шага');
