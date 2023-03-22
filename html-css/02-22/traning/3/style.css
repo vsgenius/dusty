@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  max-width: 1440px;
+  height: 774px;
+  border: 1px solid black;
+}
+.items {
+  display: flex;
+  flex-direction: column;
+  margin-top: 198.5px;
+  padding: 37px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.description {
+}
+.name {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 150%;
+  color: #323232;
+  margin-bottom: 17px;
+}
+.work {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 120%;
+  width: 514px;
+  margin-bottom: 40px;
+}
+.about {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 150%;
+  color: #323232;
+  margin-bottom: 70px;
+}
+.btn {
+  width: 245px;
+  height: 60px;
+  background-color: #a1b29f;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #f6f6f6;
+  border: none;
+  margin-bottom: 94px;
+}
+.footer {
+  width: 100%;
+  text-align: right;
+  margin-right: 0px;
+}
+.social-image {
+  margin-right: 40px;
+}

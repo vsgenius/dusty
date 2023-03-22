@@ -1,0 +1,40 @@
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+.container {
+  width: 1112px;
+  height: 199px;
+}
+.head {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 130%;
+}
+.items {
+  display: flex;
+}
+.item {
+  margin-right: 32px;
+  width: 255px;
+  height: 122px;
+  text-align: center;
+  justify-content: center;
+  border-top: 5px solid #d7b56d;
+}
+.count {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 130%;
+  margin: 0px;
+}
+.name {
+    margin: 0px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #1d1d1d;
+  margin-top: 6px;
+}

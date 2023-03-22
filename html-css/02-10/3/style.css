@@ -1,0 +1,53 @@
+.page {
+  margin-left: 95px;
+  margin-right: 95px;
+  width: 607px;
+  font-family: "Roboto", "Arial", sans-serif;
+}
+.name-company {
+  font-size: 20px;
+  color: #5948e2;
+}
+.address {
+  font-size: 10px;
+  margin: 0;
+}
+.head-2 {
+  font-size: 21px;
+  font-weight: 100;
+  margin-top: 20px;
+}
+.head-main {
+  font-size: 34px;
+  font-weight: 100;
+  color: #1e2280;
+}
+.date {
+  font-size: 11px;
+}
+.overview {
+  text-decoration: underline;
+}
+.simple-text {
+  font-size: 11px;
+  line-height: 20px;
+}
+.color-pink {
+  color: #d80b7d;
+}
+.italic {
+  font-style: italic;
+}
+.head-3 {
+  font-size: 16px;
+  font-weight: 100;
+}
+.head-4 {
+  font-size: 12px;
+}
+.margin-top {
+  margin-top: 60px;
+}
+footer {
+  text-align: end;
+}

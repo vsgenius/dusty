@@ -1,0 +1,56 @@
+body {
+    margin: 150px;
+}
+h1 {
+    font-weight:100;
+    font-family:Arial Bold, Helvetica, sans-serif;
+    text-transform: uppercase;
+}
+header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+img {
+    width: 400px;
+    height: 500px;
+    margin-bottom: 100px;
+}   
+main {
+    display: flex;
+}
+h3 {
+    letter-spacing: 4px;
+    color: forestgreen;
+    font-size: 15px;
+    font-weight:200;
+    font-family:Arial Bold, Helvetica, sans-serif;
+    text-transform: uppercase;
+}
+div {}
+ul {
+    font-style: italic;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+ol {
+    margin-left: 50px;
+    font-size: 13px;
+    font-weight:lighter;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.ol-none {
+    list-style: none;
+}
+.h1-new {
+    letter-spacing: 10px;
+}
+ol li {
+    margin-bottom: 20px;
+}
+ul li {
+    margin-bottom: 5px;
+}
+div ul {
+    width: 230px;
+}

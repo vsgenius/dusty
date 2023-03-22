@@ -1,0 +1,85 @@
+@font-face {
+  font-family: "Akrobat-Black";
+  src: url("/font/Akrobat-Black.ttf");
+}
+@font-face {
+  font-family: "Akrobat-Bold";
+  src: url("/font/Akrobat-Bold.ttf");
+}
+@font-face {
+  font-family: "Akrobat-ExtraBold";
+  src: url("/font/Akrobat-ExtraBold.ttf");
+}
+@font-face {
+  font-family: "Akrobat-ExtraLight";
+  src: url("/font/Akrobat-ExtraLight.ttf");
+}
+@font-face {
+  font-family: "Akrobat-Light";
+  src: url("/font/Akrobat-Light.ttf");
+}
+@font-face {
+  font-family: "Akrobat";
+  src: url("/font/Akrobat-Regular.ttf");
+}
+@font-face {
+  font-family: "Akrobat-SemiBold";
+  src: url("/font/Akrobat-SemiBold.ttf");
+}
+@font-face {
+  font-family: "Akrobat-Thin";
+  src: url("/font/Akrobat-Thin.ttf");
+}
+body {
+  text-align: center;
+  font-family: "Akrobat", sans-serif;
+  max-width: 1922px;
+}
+.container {
+  display: flex;
+  height: 120px;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  margin-top: 23px;
+  margin-left: 86px;
+  width: 135px;
+  height: 75px;
+}
+.nav-menu {
+  width: 1070px;
+  margin: 0px;
+  display: flex;
+  font-family: "Akrobat-SemiBold", sans-serif;
+  font-size: 20px;
+  line-height: 25px;
+  align-items: center;
+  background-color: #d3d1e9;
+  justify-content: space-between;
+  height: 120px;
+}
+.menu {
+  display: flex;
+  list-style: none;
+  margin-left: 212px;
+}
+.menu-item {
+  margin-right: 50px;
+}
+.lang {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  height: 120px;
+  width: 120px;
+  background-color: #ce0002;
+  color: white;
+}
+.item-select {
+  color: red;
+}

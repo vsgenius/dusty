@@ -1,0 +1,73 @@
+@font-face {
+  font-family: "Roboto Bold";
+  src: url("/font/Roboto-Bold.ttf");
+}
+@font-face {
+  font-family: "Roboto ExtraLight";
+  src: url("/font/Roboto-ExtraLight.ttf");
+}
+@font-face {
+  font-family: "Roboto Light";
+  src: url("/font/Roboto-Light.ttf");
+}
+@font-face {
+  font-family: "Roboto Medium";
+  src: url("/font/Roboto-Medium.ttf");
+}
+@font-face {
+  font-family: "Roboto Regular";
+  src: url("/font/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: "Roboto SemiBold";
+  src: url("/font/Roboto-SemiBold.ttf");
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+.container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 290px;
+  height: 165px;
+  background: #fbfbfb;
+  box-shadow: -4px 0px 4px rgba(0, 0, 0, 0.1), 4px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+div .head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.price {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+}
+.rectangle {
+  font-size: 13px;
+  width: 70px;
+  height: 15px;
+  background-color: coral;
+  color: #fbfbfb;
+}
+.block-btn {
+  width: 100%;
+  text-align: center;
+}
+.btn {
+  padding: 0px;
+  background: #2cb708;
+  border-radius: 10px;
+  width: 100%;
+  height: 41px;
+  border: 0px;
+  color: #fbfbfb;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+}
