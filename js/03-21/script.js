@@ -1,59 +1,59 @@
 // Первое задание
-// const countSecond = +prompt("Количество секунд?");
-// if (countSecond < 100 && countSecond > 0) {
-//   alert(countSecond + " баллов");
-// } else if (countSecond > 100 && countSecond < 120) {
-//   alert("100 баллов");
-// } else {
-//   alert("0 баллов");
-// }
+const countSecond = +prompt("Количество секунд?");
+if (countSecond < 100 && countSecond > 0) {
+  alert(countSecond + " баллов");
+} else if (countSecond > 100 && countSecond < 120) {
+  alert("100 баллов");
+} else {
+  alert("0 баллов");
+}
 // Второе задание
-// let pointsPlayer = 100;
-// let pointsComp = 100;
-// while (pointsPlayer > 0 && pointsComp > 0) {
-//   const bet = +prompt("Ставка?");
-//   const monet = Math.floor(Math.random() * 2) === 0 ? "орел" : "решка";
-//   console.log(monet);
-//   if (monet == "орел") {
-//     pointsPlayer -= bet;
-//     pointsComp += bet;
-//     alert(
-//       monet +
-//         " -  проигрыш, " +
-//         "вы " +
-//         pointsPlayer +
-//         " компьютер " +
-//         pointsComp
-//     );
-//   } else {
-//     pointsComp -= bet;
-//     pointsPlayer += bet;
-//     alert(
-//       monet +
-//         " -  выигрыш, " +
-//         "вы " +
-//         pointsPlayer +
-//         " компьютер " +
-//         pointsComp
-//     );
-//   }
-// }
-// alert("Выиграл " + (pointsPlayer > pointsComp ? "человек" : "компьютер"));
+let pointsPlayer = 100;
+let pointsComp = 100;
+while (pointsPlayer > 0 && pointsComp > 0) {
+  const bet = +prompt("Ставка?");
+  const monet = Math.floor(Math.random() * 2) === 0 ? "орел" : "решка";
+  console.log(monet);
+  if (monet == "орел") {
+    pointsPlayer -= bet;
+    pointsComp += bet;
+    alert(
+      monet +
+        " -  проигрыш, " +
+        "вы " +
+        pointsPlayer +
+        " компьютер " +
+        pointsComp
+    );
+  } else {
+    pointsComp -= bet;
+    pointsPlayer += bet;
+    alert(
+      monet +
+        " -  выигрыш, " +
+        "вы " +
+        pointsPlayer +
+        " компьютер " +
+        pointsComp
+    );
+  }
+}
+alert("Выиграл " + (pointsPlayer > pointsComp ? "человек" : "компьютер"));
 
 // Четвертое задание
-// let year = 0;
-// const number = +prompt("Число?");
-// let n1 = 1;
-// let n2 = 1;
-// let countRabbit = 2;
-// while (number > countRabbit) {
-//   let temp = n2;
-//   n1 = n2;
-//   n2 = countRabbit;
-//   countRabbit += temp;
-//   ++year;
-// }
-// alert("Через " + year);
+let year = 0;
+const number = +prompt("Число?");
+let n1 = 1;
+let n2 = 1;
+let countRabbit = 2;
+while (number > countRabbit) {
+  let temp = n2;
+  n1 = n2;
+  n2 = countRabbit;
+  countRabbit += temp;
+  ++year;
+}
+alert("Через " + year);
 
 //третье
 
