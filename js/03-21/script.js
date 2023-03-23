@@ -1,20 +1,23 @@
 // Первое задание
 const countSecond = +prompt('Количество секунд?');
+const wordPoints = ' баллов';
+let result = '';
 if (countSecond < 100 && countSecond > 0) {
-  alert(countSecond + ' баллов');
+  result = countSecond + wordPoints;
 } else if (countSecond > 100 && countSecond < 120) {
-  alert('100 баллов');
+  result = '100' + wordPoints;
 } else {
-  alert('0 баллов');
+  result = '0' + wordPoints;
 }
+alert(result);
 // Второе задание
 let pointsPlayer = 100;
 let pointsComp = 100;
-while (pointsPlayer > 0 && pointsComp > 0) {
+while (pointsPlayer >= 0 && pointsComp >= 0) {
   const bet = +prompt('Ставка?');
+  const side = +prompt('Орел или решка?');
   const monet = Math.floor(Math.random() * 2) === 0 ? 'орел' : 'решка';
-  console.log(monet);
-  if (monet == 'орел') {
+  if (monet !== side) {
     pointsPlayer -= bet;
     pointsComp += bet;
     alert(
@@ -43,13 +46,11 @@ alert('Выиграл ' + (pointsPlayer > pointsComp ? 'человек' : 'ко�
 // Четвертое задание
 let year = 0;
 const number = +prompt('Число?');
-let n1 = 1;
-let n2 = 1;
+let pred = 1;
 let countRabbit = 2;
 while (number > countRabbit) {
-  let temp = n2;
-  n1 = n2;
-  n2 = countRabbit;
+  let temp = pred;
+  pred = countRabbit;
   countRabbit += temp;
   ++year;
 }
@@ -67,15 +68,15 @@ beginHorizont = abc.search(firstOne);
 endHorizont = abc.search(secondOne);
 beginVertical = firstTwo;
 endVertical = secondTwo;
-let pred = beginHorizont;
-for (let i = beginHorizont + 1; i <= endHorizont; i++) {
-  console.log(abc[pred] + beginVertical + '-' + abc[i] + beginVertical);
-  pred = i;
+if (beginHorizont != endHorizont) {
+  console.log(
+    abc[beginHorizont] + beginVertical + '-' + abc[endHorizont] + beginVertical
+  );
 }
-pred = beginVertical;
-for (let i = +beginVertical + 1; i <= endVertical; i++) {
-  console.log(abc[endHorizont] + pred + '-' + abc[endHorizont] + i);
-  pred = i;
+if (beginVertical != endVertical) {
+  console.log(
+    abc[endHorizont] + beginVertical + '-' + abc[endHorizont] + endVertical
+  );
 }
 //пятое
 const speedAhiles = prompt('Скорость Ахилесса (м/с)?');
@@ -85,11 +86,12 @@ const newDist = prompt('Надо приблизится на (также в ме
 let step = 0;
 while (dist > newDist) {
   dist = (dist / speedAhiles) * speedTurtle;
-  step++;
-  if (step > 1000) {
+  console.log(dist);
+  if (speedAhiles <= speedTurtle) {
     step = -1;
     break;
   }
+  step++;
 }
 if (step === -1) alert('Никогда');
 else alert(step + ' шага');
