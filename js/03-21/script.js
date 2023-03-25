@@ -1,15 +1,14 @@
 // Первое задание
 const countSecond = +prompt('Количество секунд?');
-const wordPoints = ' баллов';
 let result = '';
 if (countSecond < 100 && countSecond > 0) {
-  result = countSecond + wordPoints;
+  result = countSecond;
 } else if (countSecond > 100 && countSecond < 120) {
-  result = '100' + wordPoints;
+  result = '100';
 } else {
-  result = '0' + wordPoints;
+  result = '0';
 }
-alert(result);
+alert(result + ' баллов');
 // Второе задание
 let pointsPlayer = 100;
 let pointsComp = 100;
@@ -57,41 +56,34 @@ while (number > countRabbit) {
 alert('Через ' + year);
 
 //третье
-
 const firstOne = prompt('Начальная клетка горизонталь?');
 const firstTwo = prompt('Начальная клетка вертикаль?');
 const secondOne = prompt('Конечная клетка горизонталь?');
 const secondTwo = prompt('Конечная клетка вертикаль?');
-let beginHorizont, endHorizont, beginVertical, endVertical;
-const abc = 'abcdefgh';
-beginHorizont = abc.search(firstOne);
-endHorizont = abc.search(secondOne);
-beginVertical = firstTwo;
-endVertical = secondTwo;
-if (beginHorizont != endHorizont) {
-  console.log(
-    abc[beginHorizont] + beginVertical + '-' + abc[endHorizont] + beginVertical
-  );
+let move = 0;
+if (firstOne != secondOne) {
+  ++move;
+  console.log(firstOne + firstTwo + '-' + secondOne + firstTwo);
 }
-if (beginVertical != endVertical) {
-  console.log(
-    abc[endHorizont] + beginVertical + '-' + abc[endHorizont] + endVertical
-  );
+if (firstTwo != secondTwo) {
+  ++move;
+  console.log(secondOne + firstTwo + '-' + secondOne + secondTwo);
 }
+console.log('Шагов ' + move);
 //пятое
 const speedAhiles = prompt('Скорость Ахилесса (м/с)?');
 const speedTurtle = prompt('Скорость черепахи (м/с)?');
 let dist = prompt('Расстояние? (в метрах)');
 const newDist = prompt('Надо приблизится на (также в метрах)?');
-let step = 0;
-while (dist > newDist) {
-  dist = (dist / speedAhiles) * speedTurtle;
-  console.log(dist);
-  if (speedAhiles <= speedTurtle) {
-    step = -1;
-    break;
-  }
+let step = -1;
+if (speedAhiles > speedTurtle) {
   step++;
+  while (dist > newDist) {
+    dist = (dist / speedAhiles) * speedTurtle;
+    console.log(dist);
+    step++;
+  }
+  alert(step + ' шага');
+} else {
+  alert('Никогда');
 }
-if (step === -1) alert('Никогда');
-else alert(step + ' шага');
