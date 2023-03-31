@@ -74,4 +74,24 @@ function checkTringle(firstSide, secondSide, thirdSide) {
     'является ли треугольник прямоугольным - ' +
       isExistTriangle(firstSide, secondSide, thirdSide)
   );
-} 
+}
+// задание 4 Допросник
+function cb(input) {
+  return Number(input);
+}
+function funcwithCb(input, cb) {
+  if (cb(input)) return true;
+  return false;
+}
+function checkInt() {
+  let check = false;
+  while (check == false) {
+    let input = prompt('Введите число');
+    if (funcwithCb(input, cb)) {
+      alert('Вы ввели число, поздравляю)');
+      check = true;
+    } else {
+      alert('Введено не число.');
+    }
+  }
+}
