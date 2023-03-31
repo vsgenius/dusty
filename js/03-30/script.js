@@ -115,3 +115,12 @@ function checkInt() {
     }
   }
 }
+//задание 5
+function generateNumber(from,to=0) {
+  return Math.random()*from;
+}
+let number = 1;
+function getCount(cb) {
+  number = cb(number);
+  return number;
+}
