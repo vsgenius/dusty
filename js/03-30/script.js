@@ -28,7 +28,9 @@ function isOnOneLine(
 ) {
   return (
     (thirdPointX - firstPointX) / (secondPointX - firstPointX) ==
-    (thirdPointY - firstPointY) / (secondPointY - firstPointY)
+      (thirdPointY - firstPointY) / (secondPointY - firstPointY) ||
+    (thirdPointX == secondPointX && firstPointX ==secondPointX) ||
+      (thirdPointY == firstPointY && secondPointY == firstPointY)
   );
 }
 
@@ -116,8 +118,8 @@ function checkInt() {
   }
 }
 //задание 5
-function generateNumber(from,to=0) {
-  return Math.random()*from;
+function generateNumber(from, to = 0) {
+  return Math.random() * from;
 }
 let number = 1;
 function getCount(cb) {
