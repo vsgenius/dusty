@@ -84,13 +84,6 @@ function isNumber(input) {
 function isOverThousand(input) {
   return input > 1000;
 }
-function isFiveChar(input) {
-  return input.length > 5;
-}
-function funcwithCb(input, cb) {
-  if (cb(input)) return true;
-  return false;
-}
 function checkInt() {
   let check = true;
   while (check) {
@@ -101,17 +94,27 @@ function checkInt() {
     ) {
       alert('Вы ввели верное число, поздравляю)');
       check = false;
+      return inputNumber;
     } else {
       alert('Ошибка ввода числа.');
     }
   }
-  check = true;
+}
+function isFiveChar(input) {
+  return input.length > 5;
+}
+function funcwithCb(input, cb) {
+  if (cb(input)) return true;
+  return false;
+}
+function checkStr() {
+  let check = true;
   while (check) {
     let inputText = prompt('Введите текст более 5 знаков');
-    console.log(isFiveChar(inputText));
     if (funcwithCb(inputText, isFiveChar)) {
       alert('Вы ввели верный текст, поздравляю)');
       check = false;
+      return inputText;
     } else {
       alert('Ошибка ввода текста.');
     }
