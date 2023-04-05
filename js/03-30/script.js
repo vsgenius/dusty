@@ -29,8 +29,8 @@ function isOnOneLine(
   return (
     (thirdPointX - firstPointX) / (secondPointX - firstPointX) ==
       (thirdPointY - firstPointY) / (secondPointY - firstPointY) ||
-    (thirdPointX == secondPointX && firstPointX ==secondPointX) ||
-      (thirdPointY == firstPointY && secondPointY == firstPointY)
+    (thirdPointX == secondPointX && firstPointX == secondPointX) ||
+    (thirdPointY == firstPointY && secondPointY == firstPointY)
   );
 }
 
@@ -78,54 +78,26 @@ function checkTringle(firstSide, secondSide, thirdSide) {
   );
 }
 // задание 4 Допросник
-function isNumber(input) {
-  return Number(input);
-}
-function isOverThousand(input) {
-  return input > 1000;
-}
-function checkInt() {
-  let check = true;
-  while (check) {
-    let inputNumber = prompt('Введите число более 1000');
-    if (
-      funcwithCb(inputNumber, isNumber) &&
-      funcwithCb(inputNumber, isOverThousand)
-    ) {
-      alert('Вы ввели верное число, поздравляю)');
-      check = false;
-      return inputNumber;
-    } else {
-      alert('Ошибка ввода числа.');
-    }
-  }
-}
-function isFiveChar(input) {
-  return input.length > 5;
-}
-function funcwithCb(input, cb) {
-  if (cb(input)) return true;
+function checkInt(input) {
+  if (Number(input) && input > 1000) return true;
   return false;
 }
-function checkStr() {
-  let check = true;
-  while (check) {
-    let inputText = prompt('Введите текст более 5 знаков');
-    if (funcwithCb(inputText, isFiveChar)) {
-      alert('Вы ввели верный текст, поздравляю)');
-      check = false;
-      return inputText;
-    } else {
-      alert('Ошибка ввода текста.');
-    }
+function checkStr(input) {
+    if (input.length > 5) return true;
+    return false;
+}
+function getAnswer(str, cb) {
+  while (!cb(prompt(str))) {
+    if (!cb(prompt(str))) alert('Данные не верны, повторите');
   }
+  alert('Вы ввели верные данные, поздравляю');
 }
 //задание 5
-function generateNumber(from, to = 0) {
-  return Math.random() * from;
-}
-let number = 1;
-function getCount(cb) {
-  number = cb(number);
-  return number;
-}
+// function generateNumber(from, to = 0) {
+//   return Math.random() * from;
+// }
+// let number = 1;
+// function getCount(cb) {
+//   number = cb(number);
+//   return number;
+// }
