@@ -87,10 +87,7 @@ function checkStr(input) {
     return false;
 }
 function getAnswer(str, cb) {
-  while (!cb(prompt(str))) {
-    if (!cb(prompt(str))) alert('Данные не верны, повторите');
-  }
-  alert('Вы ввели верные данные, поздравляю');
+  return !cb(prompt(str));
 }
 //задание 5
 // function generateNumber(from, to = 0) {
