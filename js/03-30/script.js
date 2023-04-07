@@ -86,8 +86,13 @@ function checkStr(input) {
     if (input.length > 5) return true;
     return false;
 }
-function getAnswer(str, cb) {
-  return !cb(prompt(str));
+
+function getAnswer(question, cb) {
+  while(true) {
+    const ans = prompt(question);
+    if (cb(ans)) return ans;
+    alert('Ввод не корректный')
+  }
 }
 //задание 5
 // function generateNumber(from, to = 0) {
