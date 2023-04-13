@@ -1,21 +1,44 @@
 console.log('Задание 4');
 function check(str) {
-  const Br = ['(', ')'];
-  const figBr = ['{', '}'];
-  const sqBr = ['[', ']'];
-  let temp = [];
+  let iter = [];
   for (let ch of str) {
-    if (temp.length == 0) temp.push(ch);
-    else if (
-      (ch === '(' || ch === '[' || ch === '{') &&
-      (temp.at(-1) === '{' || temp.at(-1) === '(' || temp.at(-1) === '[')
-    )
-      temp.push(ch);
-    else if (ch === ')' && temp.at(-1) === Br.at(0)) temp.pop();
-    else if (ch === '}' && temp.at(-1) === figBr.at(0)) temp.pop();
-    else if (ch === ']' && temp.at(-1) === sqBr.at(0)) temp.pop();
-    else temp.push(ch);
+    if (iter.length == 0) {
+      iter.push(ch);
+    } else {
+      switch (ch) {
+        case '{':
+          iter.push(ch);
+          break;
+        case '[':
+          iter.push(ch);
+          break;
+        case '(':
+          iter.push(ch);
+          break;
+        case ']':
+          if (iter.at(-1) == '[') {
+            iter.pop();
+            break;
+          } else {
+            return 'некорректно';
+          }
+        case ')':
+          if (iter.at(-1) == '(') {
+            iter.pop();
+            break;
+          } else {
+            return 'некорректно';
+          }
+        case '}':
+          if (iter.at(-1) == '{') {
+            iter.pop();
+            break;
+          } else {
+            return 'некорректно';
+          }
+      }
+    }
   }
-  return temp.length == 0 ? 'корректно' : 'некорректно';
+  return iter.length ? 'некорректно' : 'корректно';
 }
 console.log(check(prompt('Введите текст')));

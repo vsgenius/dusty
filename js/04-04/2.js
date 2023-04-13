@@ -8,7 +8,7 @@ function isPolindrom(word) {
   return true;
 }
 if (isPolindrom(prompt('Введите слово'))) {
-  console.log('Полиндром');
+  console.log('Палиндром');
 } else {
-  console.log('Не полиндром');
+  console.log('Не палиндром');
 }
