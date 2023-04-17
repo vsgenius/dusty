@@ -1531,7 +1531,7 @@ const emojis = [
 ];
 let list = [];
 for (let i = 0; i < 10; i++) {
-  list.push(emojis[Math.floor(Math.random() * 1528)]);
+  list.push(emojis[Math.floor(Math.random() * emojis.length)]);
 }
 console.log('Задание 1');
 console.log(list.join(','));
