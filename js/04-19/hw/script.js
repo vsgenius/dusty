@@ -9,51 +9,45 @@ function firstTask(args) {
   return result;
 }
 //firstTask({ cool: 'yes', option: true });
-
+function addKey(result, obj) {
+  for (const key in obj) {
+    if (Object.hasOwnProperty.call(result, key)) {
+      result[key] += obj[key];
+    } else {
+      result[key] = obj[key];
+    }
+  }
+}
 function secondTask(obj1, obj2) {
   let result = {};
-  for (const key in obj1) {
-    if (Object.hasOwnProperty.call(result, key)) {
-      result[key] += obj1[key];
-    } else {
-      result[key] = obj1[key];
-    }
-  }
-  for (const key in obj2) {
-    if (Object.hasOwnProperty.call(result, key)) {
-      result[key] += obj2[key];
-    } else {
-      result[key] = obj2[key];
-    }
-  }
+  addKey(result, obj1);
+  addKey(result, obj2);
   return result;
 }
-// secondTask({ cool: 'yes', value: 5 },{ cool: 'no', result: 15 });
-// secondTask({ cool: 'yes', value: 5 },{ text: 'no', value: 15 });
-function defineType(key) {
-  if (typeof key === 'object') {
-    if(key===null) {
-      return null;
-    } else if (key===undefined) {
-      return undefined;
-    } else {
-      return 'array'
-    }
-  }
-  return typeof key;
 
-}
-function addType(arr, type) {
-  if (!Object.hasOwnProperty.call(arr,type)) {
-    arr[type]=0;
+// console.log(secondTask({ cool: 'yes', value: 5 },{ cool: 'no', result: 15 }));
+// console.log(secondTask({ cool: 'yes', value: 5 },{ text: 'no', value: 15 }));
+function defineType(key) {
+  if (typeof key !== 'object') {
+    return typeof key;
   }
-  ++arr[type];
+  switch (key) {
+    case null:
+      return null;
+    case undefined:
+      return undefined;
+    default:
+      return 'array';
+  }
 }
 function trirdTask(obj) {
   let result = {};
   for (const key in obj) {
     const type = defineType(obj[key]);
-    addType(result,type);
+    if (!Object.hasOwnProperty.call(result, type)) {
+      result[type] = 0;
+    }
+    ++result[type];
   }
   return result;
 }
@@ -64,3 +58,48 @@ function trirdTask(obj) {
 //   trirdTask({ test: undefined, anotherField: [], yetAnother: [undefined] })
 // );
 // console.log(trirdTask({ test: undefined, anotherField: [], undefined: null }));
+
+function countFields(obj) {
+  return Object.keys(obj).join('').length;
+}
+function fourthTask(obj) {
+  const identifySign = [
+    'Водолей',
+    'Рыбы',
+    'Овен',
+    'Телец',
+    'Близнецы',
+    'Рак',
+    'Лев',
+    'Дева',
+    'Весы',
+    'Скорпион',
+    'Стрелец',
+    'Козерог',
+  ];
+  return identifySign[countFields(obj) % 12];
+}
+// console.log(fourthTask({ a: 'ololo' }));
+// console.log(fourthTask({ a: 'ololo', b: undefined, '1234567890': 1234567890 }));
+
+function countLetter(str) {
+  let result = {};
+  for (const ch of str) {
+    if (!Object.hasOwnProperty.call(result, ch)) {
+      result[ch] = 0;
+    }
+    ++result[ch];
+  }
+  return result;
+}
+function fifthTask(str) {
+  let count = 0;
+  const letters = countLetter(str);
+  for (const key in letters) {
+    if (letters[key] % 2 === 0) {
+      ++count;
+    }
+  }
+  return count;
+}
+// console.log(fifthTask('dsfsdfsdfsd'));
