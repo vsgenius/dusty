@@ -1,0 +1,16 @@
+button {
+    background-color: black;
+    border: none;
+    color: white;
+}
+
+.btn-black {
+    background-color: white;
+    border: none;
+    color: black;
+}
+.body-black {
+    background-color: black;
+    border: none;
+    color: white;
+}

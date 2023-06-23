@@ -1,22 +1,29 @@
-// Сделайте интерфейс из текстового поля и кнопки “Выполнить”. При клике на кнопку интерфейс должен 
-// делать следующие действия:
-
-// - если в текстовом поле слово “назад” – перемещайте браузер на шаг назад по истории просмотра страниц
-// - если в текстовом поле слово “вперед” – соответственно, вперед
-// - если в текстовом поле текст, начинается со слова “скопируй”, то в буфер обмена должна добавиться строка после этого слова, без лидирующего пробела (то есть, если в текстовом поле `скопируй ололо`, то в буфер обмена кладём `ололо` без пробела в начале
-// - если в текстовом поле “обнови” то страница перезагружается
-// - если в текстовом поле строка начинается на текст `переадресуй на` то после нажатия на кнопку перекидываем на URL идущий далее
-// - если в текстовом поле ничего из перечисленного – показываем сообщение о том, что мы такого не умеем
-
 const btn = document.querySelector('.btn');
-btn.addEventListener('click',(e)=> {
-    const input = document.querySelector('#text');
-    if(!input.value) return;
-    else if (input.value==='назад') window.history.go(-1);
-    else if (input.value==='вперед') window.history.go(+1);
-    else if (input.value.split(' ')[0]==='скопируй') console.log()
-    else if (input.value==='обнови') location.reload();
-    else if (input.value.split(' ')[0]==='переадресуй') location.href = input.value.split(' ')[1]; 
-    else alert('такого не умею')   
-    console.log(window);
-})
+btn.addEventListener('click', (e) => {
+  const input = document.querySelector('#text');
+  if (!input.value) return;
+  else if (input.value === 'назад') {
+    input.value = '';
+    history.back();
+    return;
+  } else if (input.value === 'вперед') {
+    input.value = '';
+    history.forward();
+    return;
+  } else if (input.value.split(' ')[0] === 'скопируй') {
+    navigator.clipboard.writeText(input.value.split(' ')[1]);
+    input.value = '';
+    return;
+  } else if (input.value === 'обнови') {
+    input.value = '';
+    location.reload();
+    return;
+  } else if (
+    input.value.split(' ')[0] === 'переадресуй' &&
+    input.value.split(' ')[1] === 'на'
+  ) {
+    location.assign(input.value.split(' ')[2]);
+    input.value = '';
+    return;
+  } else alert('такого не умею');
+});
