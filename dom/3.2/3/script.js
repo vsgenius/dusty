@@ -35,36 +35,41 @@ function findCitiesNear(ourcity, lon, lat) {
     }
   }
   const result = Object.entries(list)
-  .map((elem) => {
-    return [Number(elem[0]), elem[1]];
-  })
-  .filter((elem) => {
-    return elem[0] < 20;
-  })
+    .map((elem) => {
+      return [Number(elem[0]), elem[1]];
+    })
+    .filter((elem) => {
+      return elem[0] < 20;
+    });
   return result;
 }
+
 const table = document.querySelector('tbody');
 const btn = document.querySelector('.btn');
-btn.addEventListener('click', (e) => {
+
+btn.addEventListener('click', () => {
   navigator.geolocation.getCurrentPosition(
-    function (e) {
-      const { latitude, longitude } = e.coords;
+    function (event) {
+      const { latitude, longitude } = event.coords;
       const city = getCity(latitude, longitude);
       const result = findCitiesNear(city, longitude, latitude);
-      console.log(result)
-      result.forEach((elem)=>{
+      console.log(result);
+      result.forEach((elem) => {
         const tr = document.createElement('tr');
         const td1 = document.createElement('td');
         const td2 = document.createElement('td');
         td1.textContent = elem[1];
         tr.appendChild(td1);
-        td2.textContent = elem[0]
+        td2.textContent = Math.round(elem[0]);
         tr.appendChild(td2);
         table.appendChild(tr);
-      })
+      });
     },
     function (error) {
-      alert('дайте доступ к геолокации))');
+      inputAlert.classList.remove('hidden');
+      setTimeout(() => {
+        inputAlert.classList.add('hidden');
+      }, 1000);
     }
   );
 });
