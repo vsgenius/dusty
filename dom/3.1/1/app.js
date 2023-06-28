@@ -13,8 +13,8 @@ form.addEventListener('submit', (e) => {
     form.parentElement.removeChild(form);
   } else {
     alert.classList.remove('hidden');
-    setTimeout(()=>{
+    setTimeout(() => {
       alert.classList.add('hidden');
-    },1000)
+    }, 1000);
   }
 });
