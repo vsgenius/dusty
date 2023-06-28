@@ -1,6 +1,6 @@
 const user = { login: 'user', password: 'user' };
-
 const form = document.querySelector('.form');
+const alert = document.querySelector('.alert');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -12,7 +12,9 @@ form.addEventListener('submit', (e) => {
     form.parentElement.appendChild(h1);
     form.parentElement.removeChild(form);
   } else {
-    alert('имя и/или пароль не верны');
+    alert.classList.remove('hidden');
+    setTimeout(()=>{
+      alert.classList.add('hidden');
+    },1000)
   }
-  console.log(user.login);
 });

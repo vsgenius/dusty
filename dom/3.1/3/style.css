@@ -1,15 +1,14 @@
 .container {
-
 }
 .title {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 .triangle {
-    margin: 0px 10px;
-    cursor: pointer;
+  margin: 0px 10px;
+  cursor: pointer;
 }
 .element {
-    margin: 0px 40px;
-    width: 400px;
+  margin: 0px 40px;
+  width: 400px;
 }
