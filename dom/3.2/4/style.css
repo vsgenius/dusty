@@ -1,16 +1,22 @@
+body {
+  padding: 50px;
+}
 button {
-    background-color: black;
-    border: none;
-    color: white;
+  background-color: black;
+  border: none;
+  color: white;
+  border-radius: 3px;
+  width: 100px;
+  padding: 5px;
 }
 
 .btn-black {
-    background-color: white;
-    border: none;
-    color: black;
+  background-color: white;
+  border: none;
+  color: black;
 }
 .body-black {
-    background-color: black;
-    border: none;
-    color: white;
+  background-color: black;
+  border: none;
+  color: white;
 }
