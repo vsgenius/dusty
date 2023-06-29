@@ -1,0 +1,23 @@
+.container {
+}
+.form-small {
+  width: 94%;
+}
+.clear {
+  position: absolute;
+  top: 25%;
+  right: 4%;
+  border: 1px solid black;
+  padding: 0px 4px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.ok {
+  position: absolute;
+  top: 25%;
+  right: 1%;
+  border: 1px solid black;
+  padding: 0px 4px;
+  border-radius: 15px;
+  cursor: pointer;
+}
