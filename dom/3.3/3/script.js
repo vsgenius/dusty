@@ -162,7 +162,8 @@ for (let i = 0; i < 10; i++) {
 }
 let lastEmoji = undefined;
 let countRemove = 0;
-container.addEventListener('mouseover', (e) => {
+container.addEventListener('mouseover', (event) => {
+  const target = event.target;
   if (countRemove == 20) {
     for (let i = 0; i < 10; i++) {
       createEmoji(i);
@@ -170,18 +171,18 @@ container.addEventListener('mouseover', (e) => {
     }
     countRemove = 0;
   }
-  if (e.target.className === 'emoji') {
+  if (target.className === 'emoji') {
     if (
       lastEmoji !== undefined &&
-      e.target.textContent === lastEmoji.textContent &&
-      e.target !== lastEmoji
+      target.textContent === lastEmoji.textContent &&
+      target !== lastEmoji
     ) {
-      container.removeChild(e.target);
+      container.removeChild(target);
       container.removeChild(lastEmoji);
       lastEmoji = '';
       countRemove += 2;
       return;
     }
-    lastEmoji = e.target;
+    lastEmoji = target;
   }
 });
