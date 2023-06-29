@@ -145,6 +145,7 @@ const emoji = [
   '👼🏽',
 ];
 function createEmoji(i, n) {
+  const { bottom, right, left } = container.getBoundingClientRect();
   for (let j = 0; j < n; j++) {
     const div = document.createElement('div');
     div.textContent = emoji[i];
@@ -155,34 +156,34 @@ function createEmoji(i, n) {
     container.appendChild(div);
   }
 }
-const container = document.querySelector('.container');
-const { x, y, bottom, right, topCon, left } = container.getBoundingClientRect();
-for (let i = 0; i < 10; i++) {
-  createEmoji(i, 2);
+function fillEmoji() {
+  for (let i = 0; i < 10; i++) {
+    createEmoji(i, 2);
+  }
 }
+const container = document.querySelector('.container');
+fillEmoji();
 let lastEmoji = undefined;
 let countRemove = 0;
 container.addEventListener('mouseover', (event) => {
+  console.log(event);
   const target = event.target;
+  if (target.className !== 'emoji') {
+    return;
+  }
   if (countRemove == 20) {
-    for (let i = 0; i < 10; i++) {
-      createEmoji(i);
-      createEmoji(i);
-    }
+    fillEmoji();
     countRemove = 0;
   }
-  if (target.className === 'emoji') {
-    if (
-      lastEmoji !== undefined &&
-      target.textContent === lastEmoji.textContent &&
-      target !== lastEmoji
-    ) {
-      container.removeChild(target);
-      container.removeChild(lastEmoji);
-      lastEmoji = '';
-      countRemove += 2;
-      return;
-    }
-    lastEmoji = target;
+  if (
+    lastEmoji !== undefined &&
+    target.textContent === lastEmoji.textContent &&
+    target !== lastEmoji
+  ) {
+    container.removeChild(target);
+    container.removeChild(lastEmoji);
+    lastEmoji = '';
+    countRemove += 2;
   }
+  lastEmoji = target;
 });
