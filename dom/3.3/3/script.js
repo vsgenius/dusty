@@ -166,7 +166,7 @@ fillEmoji();
 let lastEmoji = undefined;
 let countRemove = 0;
 container.addEventListener('mouseover', (event) => {
-  console.log(event);
+  // console.log(event);
   const target = event.target;
   if (target.className !== 'emoji') {
     return;
