@@ -1,0 +1,21 @@
+.container {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+.list-items {
+    margin: 20px;
+}
+.item {
+    min-width: 200px;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 5px 10px;
+    margin: 5px;
+}
+.btn-ok {
+   margin-right: 3px;
+}
+.input-editable {
+    margin-right: 3px;
+}
