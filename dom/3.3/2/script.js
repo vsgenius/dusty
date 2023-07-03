@@ -23,7 +23,7 @@ blockDigits.addEventListener('click', (event) => {
     (lastTarget !== undefined && time - lastClick > 1000) ||
     (lastTarget !== undefined && lastTarget !== parent)
   ) {
-    ++countChar;
+    countChar++;
     i = 0;
   }
   const value = text.value;
