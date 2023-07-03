@@ -11,24 +11,26 @@ function replaceChar(origString, replaceChar, index) {
 let i = 0;
 let countChar = 0;
 let lastTarget = undefined;
-var lastClick = 0;
+let lastClick = 0;
 
 blockDigits.addEventListener('click', (event) => {
   const target = event.target;
-  var date = new Date();
-  var time = date.getTime();
+  let date = new Date();
+  let time = date.getTime();
+  const parent = target.closest('.block');
+
   if (
     (lastTarget !== undefined && time - lastClick > 1000) ||
-    (lastTarget !== undefined && lastTarget !== target.parentElement)
+    (lastTarget !== undefined && lastTarget !== parent)
   ) {
     ++countChar;
     i = 0;
   }
   const value = text.value;
-  const lishChar = target.parentElement.dataset.text;
+  const lishChar = parent.dataset.text;
   text.value = replaceChar(value, lishChar[i], countChar);
   lastClick = time;
   ++i;
-  lastTarget = target.parentElement;
+  lastTarget = parent;
   if (lishChar.length == i) i = 0;
 });
