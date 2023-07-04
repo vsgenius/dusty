@@ -18,3 +18,10 @@
 .text {
   padding: 0px 10px;
 }
+.error {
+  color: red;
+
+}
+.hidden {
+  display: none;
+}
