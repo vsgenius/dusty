@@ -32,5 +32,7 @@ blockDigits.addEventListener('click', (event) => {
   lastClick = time;
   ++i;
   lastTarget = parent;
-  if (lishChar.length == i) i = 0;
+  if (lishChar.length == i) {
+    i = 0;
+  }
 });

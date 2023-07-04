@@ -31,6 +31,8 @@ text.addEventListener('input', (e) => {
   } else if (weak(text.value)) {
     checkPassword.textContent = 'Слабый';
     return;
-  } else text.value.length < 5 && text.value.length > 0;
-  checkPassword.textContent = 'Короткий';
+  } else {
+    text.value.length < 5 && text.value.length > 0;
+    checkPassword.textContent = 'Короткий';
+  }
 });
