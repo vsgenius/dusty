@@ -37,16 +37,11 @@ formCheck.addEventListener('change', () => {
 
 form.addEventListener('change', (event) => {
   const target = event.target;
-  if (target.name === 'seat') {
-    formData[target.name] = target.value;
-  } else if (target.name === 'eat') {
-    formData[target.name] = target.checked;
-  } else if (target.name === 'select') {
-    formData[target.name] = target.value;
-  }
+  formData[target.name] = target.name !== 'eat' ? target.value : target.checked;
 });
 
 form.addEventListener('submit', (event) => {
+  console.log(formData);
   event.preventDefault();
   if (!checkSeat(formData.seat) || (formData.eat && !checkEat(formData.select)))
     return;
