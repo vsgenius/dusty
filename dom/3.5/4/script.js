@@ -5,6 +5,8 @@ container.addEventListener('click', (event) => {
   const target = event.target;
   if (!target.classList.contains('triangle')) return;
   const element = target.closest('.block').querySelector('.element');
+  console.log(element)
+  console.log(target)
   if (target.classList.contains('rotate')) {
     target.classList.remove('rotate');
     element.style.height = '';
