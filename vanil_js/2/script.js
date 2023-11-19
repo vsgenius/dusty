@@ -1,5 +1,6 @@
 const startButton = document.querySelector('.start-button');
 const container = document.querySelector('.container');
+
 function timer() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -7,13 +8,16 @@ function timer() {
     }, Math.floor(Math.random() * 10 * 1000));
   });
 }
+
 startButton.addEventListener('click', () => {
   let arrPromise = [];
   const countTimer = document.querySelector('.count-timer');
+
   if (!Number(countTimer.value)) return;
   for (let i = 0; i < countTimer.value; i++) {
     arrPromise.push(timer());
   }
+  
   Promise.all(arrPromise).then((results) => {
     console.log(results);
     let max = results[0];

@@ -6,4 +6,4 @@ new Promise(function (resolve, reject) {
   });
 })
   .then((coord) => console.log(coord))
-  .catch((error) => console.log('ошибка', error));
+  .catch((error) => console.error('ошибка', error));

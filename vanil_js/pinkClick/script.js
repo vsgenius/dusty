@@ -1,8 +1,9 @@
 const clickButton = document.querySelector('.click-button');
 
-let count = 0;
+
 
 function pinkClick() {
+  let count = 0;
   return new Promise((resolve, reject) => {
     clickButton.addEventListener('click', () => {
       count++;
