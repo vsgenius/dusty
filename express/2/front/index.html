@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 30%;
+            margin: 0 auto;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+        }
+        .input-block{
+            margin: 5px;
+        }
+        .input {
+            width: 95%;
+        }
+        .calc {
+            display: flex;
+            margin: 5px;
+            gap: 5px;
+        }
+        .numbers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .btn {
+            padding: 10px 10px;
+            flex-basis: 30%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="input-block">
+            <input class="input" type="text" name="" id="" readonly>
+        </div>
+        <div class="calc">
+            <div class="numbers">
+                <button class="btn">1</button>
+                <button class="btn">2</button>
+                <button class="btn">3</button>
+                <button class="btn">4</button>
+                <button class="btn">5</button>
+                <button class="btn">6</button>
+                <button class="btn">7</button>
+                <button class="btn">8</button>
+                <button class="btn">9</button>
+                <button class="btn">0</button>
+            </div>
+            <div class="actions">
+                <button class="btn" data-action="plus">+</button>
+                <button class="btn" data-action="minus">-</button>
+                <button class="btn" data-action="multiply">*</button>
+                <button class="btn" data-action="divide">/</button>
+                <!-- <button class="btn calculate">=</button> -->
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
