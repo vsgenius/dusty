@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+
+}
+.predator {
+    border: none;
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    margin: 0px 20px;
+}

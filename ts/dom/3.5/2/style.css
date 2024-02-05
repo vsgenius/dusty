@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+.chat {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.chat-message {
+    display: flex;
+    flex-direction: column;
+}
+.other-message {
+    display: flex;
+    justify-content: left;
+}
+.my-message {
+    display: flex;
+    justify-content: right;
+}
+.message {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 5px;
+}
+.send-message {
+    margin: 5px;
+}
+.input-message {
+    margin-right: 2px;
+}
+.btn-message {
+    border-radius: 2px;
+    border: 2px solid  rgb(6, 170, 115) ;
+    color: white;
+    background-color: rgb(6, 170, 115);
+}
