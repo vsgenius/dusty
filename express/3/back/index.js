@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.post('/', (req, res) => {
   const data = req.body.list;
   const i = Math.round(Math.random() * (data.length - 1));
-  res.json(JSON.stringify(data[i]));
+  res.json(data[i]);
 });
 
 app.listen(port, () => {
