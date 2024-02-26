@@ -33,18 +33,18 @@ class Chat {
     this.btnMessage.addEventListener('click', this.btnClick);
   }
   getListMessage() {
-    // localStorage.removeItem('chat_3.5.2');
-    // localStorage.setItem(
-    //   'chat_3.5.2',
-    //   JSON.stringify({
-    //     1: { key: 'my-message', value: 'Привет' },
-    //     2: { key: 'other-message', value: 'Здарова' },
-    //     3: { key: 'my-message', value: 'как дела?' },
-    //     4: { key: 'other-message', value: 'Отлично' },
-    //     5: { key: 'other-message', value: 'как твои?' },
-    //     6: { key: 'my-message', value: 'Великолепно' },
-    //   })
-    // );
+    localStorage.removeItem('chat_3.5.2');
+    localStorage.setItem(
+      'chat_3.5.2',
+      JSON.stringify({
+        1: { key: 'my-message', value: 'Привет' },
+        2: { key: 'other-message', value: 'Здарова' },
+        3: { key: 'my-message', value: 'как дела?' },
+        4: { key: 'other-message', value: 'Отлично' },
+        5: { key: 'other-message', value: 'как твои?' },
+        6: { key: 'my-message', value: 'Великолепно' },
+      })
+    );
     const messages = JSON.parse(localStorage.getItem('chat_3.5.2'));
     return messages;
   }
