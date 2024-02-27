@@ -1,27 +1,32 @@
 import React, { useState } from 'react';
-import {Button} from './components/Button/Button';
-import {Select} from './components/Select/Select';
-import type {FC} from 'react';
+import { Button } from './components/Button/Button';
+import { Select } from './components/Select/Select';
 
 import './App.css';
 
-
 function App() {
+  const listState = ['normal', 'hover', 'disabled'];
+  const listSecondary = ['primary', 'secondary'];
+  const listDark = ['light', 'dark'];
+  const [state, setState] = useState('normal');
+  const [secondary, setSecondary] = useState('primary');
+  const [dark, setDark] = useState('light');
+  const handleChangeState = (newState: string) => {
+    setState(newState);
+  };
+  const handleChangeSecondary = (newSecondary: string) => {
+    setSecondary(newSecondary);
+  };
+  const handleChangeDark = (newDark: string) => {
+    setDark(newDark);
+  };
   return (
     <div className="App">
       <header className="App-header">
-      <Button state={'normal' }secondary={false} dark={false}/>
-      <Button state={'normal' }secondary={true} dark={false}/>
-      <Button state={'hover' }secondary={false} dark={false}/>
-      <Button state={'hover' }secondary={true} dark={false}/>
-      <Button state={'disabled' }secondary={false} dark={false}/>
-      <Button state={'disabled' }secondary={true} dark={false}/>
-      <Button state={'normal' }secondary={false} dark={true}/>
-      <Button state={'normal' }secondary={true} dark={true}/>
-      <Button state={'hover' }secondary={false} dark={true}/>
-      <Button state={'hover' }secondary={true} dark={true}/>
-      <Button state={'disabled' }secondary={false} dark={true}/>
-      <Button state={'disabled' }secondary={true} dark={true}/>
+        <Select list={listState} change={handleChangeState} />
+        <Select list={listSecondary} change={handleChangeSecondary} />
+        <Select list={listDark} change={handleChangeDark} />
+        <Button state={state} secondary={secondary} dark={dark} />
       </header>
     </div>
   );
