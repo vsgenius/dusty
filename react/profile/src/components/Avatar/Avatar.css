@@ -1,0 +1,15 @@
+
+.avatar {
+    font-family: "Poppins", sans-serif;
+
+}
+.avatar-name {
+    font-weight: 600;
+    font-size: 14px;
+}
+.avatar-desc {
+    font-weight: 400;
+    font-size: 10px;
+    width: 204px;
+    margin: 0 auto;
+}
