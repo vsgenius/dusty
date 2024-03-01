@@ -39,7 +39,8 @@
   }
 }
 
-.profile {
+.Profile {
   padding: 40px 20px;
   background-color: white;
+  border-radius: 20px;
 }
