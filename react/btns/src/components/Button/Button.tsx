@@ -1,5 +1,6 @@
 import React from 'react';
 import type { FC } from 'react';
+import { cn } from '@bem-react/classname';
 
 import './Button.css';
 
@@ -9,10 +10,15 @@ type ButtonProps = {
   dark: string;
 };
 
+const btn = cn('btn');
+
 const Button: FC<ButtonProps> = ({ state, secondary, dark }) => {
-  const clName = `btn ${dark === 'dark' ? 'dark' : 'light'}_${
-    secondary === 'secondary' ? 'secondary' : 'primary'
-  }_${state}`;
+  let clName = btn(
+    'main',
+    `${dark === 'dark' ? 'dark' : 'light'}_${
+      secondary === 'secondary' ? 'secondary' : 'primary'
+    }_${state}`
+  );
   return <button className={clName}>Hello</button>;
 };
 
