@@ -3,6 +3,7 @@ const container = document.querySelector('.container');
 container.addEventListener('click', (event) => {
   event.preventDefault();
   const target = event.target;
+  target.
   if (!target.classList.contains('triangle')) return;
 
   const element = target.closest('.block').querySelector('.element');
