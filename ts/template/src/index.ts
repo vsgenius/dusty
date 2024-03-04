@@ -20,7 +20,7 @@ type templateObject = {
   block?: string;
   cls?: string[];
   attrs?: string[];
-  content?: string;
+  content?: templateObject;
 };
 
 type templateType =
@@ -30,7 +30,6 @@ type templateType =
   | string
   | number
   | boolean
-  | string[]
   | templateObject;
 
 function stringTemplateEngine(templateWithData: templateType): string {
@@ -87,6 +86,9 @@ console.log(
   stringTemplateEngine({
     block: 'div',
     cls: ['block'],
-    content: 'блoк',
+    content: {
+      block: 'div',
+      cls: ['block']
+    },
   })
 );

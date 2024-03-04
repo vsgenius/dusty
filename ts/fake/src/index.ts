@@ -7,7 +7,13 @@ type ProductsObject = {
   rating: number;
   stock: number;
   brand: string;
-  category: string;
+  category:
+    | 'smartphones'
+    | 'laptops'
+    | 'fragrances'
+    | 'skincare'
+    | 'groceries'
+    | 'home-decoration';
   thumbnail: string;
   images: string[];
 };
@@ -20,10 +26,9 @@ type ProductsJson = {
 };
 
 const fake = async () => {
-    const response = await fetch('https://dummyjson.com/products')
-    const products:ProductsJson = await response.json();
-    console.log(products);
-}
+  const response = await fetch('https://dummyjson.com/products');
+  const products: ProductsJson = await response.json();
+  console.log(products);
+};
 
 fake();
-
