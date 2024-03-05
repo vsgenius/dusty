@@ -1,4 +1,4 @@
-const emojis = [
+const emojis:string[] = [
   '💘',
   '💝',
   '💖',
@@ -1529,9 +1529,8 @@ const emojis = [
   '👥',
   '👣',
 ];
-let list = [];
+let list:string[] = [];
 for (let i = 0; i < 10; i++) {
   list.push(emojis[Math.floor(Math.random() * emojis.length)]);
 }
-console.log('Задание 1');
 console.log(list.join(','));

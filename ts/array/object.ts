@@ -1,4 +1,8 @@
-function firstTask(args) {
+type firstTaskType = {
+  [key: string]: string;
+};
+
+function firstTaskType(args: firstTaskType) {
   let result = [];
   for (const key in args) {
     if (Object.hasOwnProperty.call(args, key)) {
@@ -8,8 +12,8 @@ function firstTask(args) {
   console.log(result);
   return result;
 }
-//firstTask({ cool: 'yes', option: true });
-function addKey(result, obj) {
+//firstTaskType({ cool: 'yes', option: true });
+function addKey(result:firstTaskType, obj:firstTaskType) {
   for (const key in obj) {
     if (Object.hasOwnProperty.call(result, key)) {
       result[key] += obj[key];
@@ -18,7 +22,7 @@ function addKey(result, obj) {
     }
   }
 }
-function secondTask(obj1, obj2) {
+function secondTask(obj1:firstTaskType, obj2:firstTaskType) {
   let result = {};
   addKey(result, obj1);
   addKey(result, obj2);
@@ -27,30 +31,35 @@ function secondTask(obj1, obj2) {
 
 // console.log(secondTask({ cool: 'yes', value: 5 },{ cool: 'no', result: 15 }));
 // console.log(secondTask({ cool: 'yes', value: 5 },{ text: 'no', value: 15 }));
-function defineType(key) {
-  if (typeof key !== 'object') {
-    return typeof key;
-  }
-  switch (key) {
-    case null:
-      return null;
-    case undefined:
-      return undefined;
-    default:
-      return 'array';
-  }
-}
-function trirdTask(obj) {
-  let result = {};
-  for (const key in obj) {
-    const type = defineType(obj[key]);
-    if (!Object.hasOwnProperty.call(result, type)) {
-      result[type] = 0;
-    }
-    ++result[type];
-  }
-  return result;
-}
+// function defineType(key:firstTaskType | null | undefined | []) {
+//   if (typeof key !== 'object') {
+//     return typeof key;
+//   }
+//   switch (key) {
+//     case null:
+//       return null;
+//     case undefined:
+//       return undefined;
+//     default:
+//       return 'array';
+//   }
+// }
+
+// type trirdTaskType = {
+//   [key: string]: firstTaskType | null | [];
+// };
+
+// function trirdTask(obj:trirdTaskType) {
+//   let result:firstTaskType = {};
+//   for (const key in obj) {
+//     const type = defineType(obj[key]);
+//     if (!Object.hasOwnProperty.call(result, type)) {
+//       result[type] = 0;
+//     }
+//     ++result[type];
+//   }
+//   return result;
+// }
 
 // console.log(trirdTask({ test: 134 }));
 // console.log(trirdTask({ test: 'hello' }));
@@ -59,10 +68,10 @@ function trirdTask(obj) {
 // );
 // console.log(trirdTask({ test: undefined, anotherField: [], undefined: null }));
 
-function countFields(obj) {
+function countFields(obj:firstTaskType) {
   return Object.keys(obj).join('').length;
 }
-function fourthTask(obj) {
+function fourthTask(obj:firstTaskType) {
   const identifySign = [
     'Водолей',
     'Рыбы',
@@ -82,8 +91,13 @@ function fourthTask(obj) {
 // console.log(fourthTask({ a: 'ololo' }));
 // console.log(fourthTask({ a: 'ololo', b: undefined, '1234567890': 1234567890 }));
 
-function countLetter(str) {
-  let result = {};
+type countLetterType = {
+  [key: string]: number;
+};
+
+
+function countLetter(str:string) {
+  let result:countLetterType = {};
   for (const ch of str) {
     if (!Object.hasOwnProperty.call(result, ch)) {
       result[ch] = 0;
@@ -92,7 +106,7 @@ function countLetter(str) {
   }
   return result;
 }
-function fifthTask(str) {
+function fifthTask(str:string) {
   let count = 0;
   const letters = countLetter(str);
   for (const key in letters) {

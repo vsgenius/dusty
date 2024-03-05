@@ -1,5 +1,5 @@
 console.log('Задание 4');
-function check(str) {
+function check(str: string) {
   let iter = [];
   for (let ch of str) {
     if (iter.length == 0) {
@@ -41,4 +41,4 @@ function check(str) {
   }
   return iter.length ? 'некорректно' : 'корректно';
 }
-console.log(check(prompt('Введите текст')));
+console.log(check(prompt('Введите текст') || ''));

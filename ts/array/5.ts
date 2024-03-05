@@ -1,13 +1,18 @@
 console.log('Задание 5');
-function getTicket(count = 5, to = 99) {
-  let ticket = [];
+function getTicket(count: number = 5, to: number = 99) {
+  let ticket: number[] = [];
   for (let i = 0; i < count; i++) {
     let temp = Math.floor(Math.random() * to);
     if (!ticket.includes(temp)) ticket.push(temp);
   }
   return ticket;
 }
-function addUsers(listUser) {
+
+type listUserType = {
+  [key: string]: number[];
+};
+
+function addUsers(listUser: listUserType) {
   while (true) {
     let name = prompt('Введите ваше имя');
     if (name === null) return;
@@ -18,7 +23,7 @@ function addUsers(listUser) {
 function getNumber() {
   return Math.floor(Math.random() * 99);
 }
-function checkUsers(listUser, number, winer) {
+function checkUsers(listUser: listUserType, number: number, winer: string[]) {
   for (const [key, value] of Object.entries(listUser)) {
     if (value.indexOf(number) != -1) {
       value.splice(value.indexOf(number), 1);
@@ -29,9 +34,9 @@ function checkUsers(listUser, number, winer) {
   }
   return winer.length == 0 ? false : true;
 }
-function lottery(listUser) {
-  let lotteryNumber = [];
-  let winer = [];
+function lottery(listUser: listUserType) {
+  let lotteryNumber: number[] = [];
+  let winer: string[] = [];
   while (true) {
     let number = getNumber();
     if (!lotteryNumber.includes(number)) {
