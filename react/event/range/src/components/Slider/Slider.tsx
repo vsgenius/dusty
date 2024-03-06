@@ -11,14 +11,13 @@ const useStyles = makeStyles({
 });
 
 type SliperProps = {
-    setRgb: Function;
-    rgb:{
-        red:number;
-        green:number;
-        blue:number;
-        opacity: number;
-    }
-  
+  setRgb: Function;
+  rgb: {
+    red: number;
+    green: number;
+    blue: number;
+    opacity: number;
+  };
 };
 
 function valuetext(value: number) {
@@ -28,36 +27,40 @@ function valuetext(value: number) {
 const DiscreteSlider: FC<SliperProps> = ({ rgb, setRgb }) => {
   const classes = useStyles();
   const handleChangeRed = (event: any, newValue: number | number[]) => {
-   if (!Array.isArray(newValue)) {
-        setRgb((prev:any) => {
-            return {...prev, red:newValue}})
-   }
+    if (!Array.isArray(newValue)) {
+      setRgb((prev: any) => {
+        return { ...prev, red: newValue };
+      });
+    }
   };
   const handleChangeGreen = (event: any, newValue: number | number[]) => {
     if (!Array.isArray(newValue)) {
-        setRgb((prev:any) => {
-            return {...prev, green:newValue}})
-   }
-   };
-   const handleChangeBlue = (event: any, newValue: number | number[]) => {
+      setRgb((prev: any) => {
+        return { ...prev, green: newValue };
+      });
+    }
+  };
+  const handleChangeBlue = (event: any, newValue: number | number[]) => {
     if (!Array.isArray(newValue)) {
-        setRgb((prev:any) => {
-            return {...prev, blue:newValue}})
-   }
-   };
-   const handleChangeOpac = (event: any, newValue: number | number[]) => {
+      setRgb((prev: any) => {
+        return { ...prev, blue: newValue };
+      });
+    }
+  };
+  const handleChangeOpac = (event: any, newValue: number | number[]) => {
     if (!Array.isArray(newValue)) {
-        setRgb((prev:any) => {
-            return {...prev, opacity:newValue}})
-   }
-   };
+      setRgb((prev: any) => {
+        return { ...prev, opacity: newValue };
+      });
+    }
+  };
   return (
     <div className={classes.root}>
       <Typography id="discrete-slider" gutterBottom>
         Красный
       </Typography>
       <Slider
-      onChange={handleChangeRed}
+        onChange={handleChangeRed}
         defaultValue={0}
         value={rgb.red}
         getAriaValueText={valuetext}
@@ -71,7 +74,7 @@ const DiscreteSlider: FC<SliperProps> = ({ rgb, setRgb }) => {
         Зеленый
       </Typography>
       <Slider
-      onChange={handleChangeGreen}
+        onChange={handleChangeGreen}
         defaultValue={0}
         value={rgb.green}
         getAriaValueText={valuetext}
@@ -85,7 +88,7 @@ const DiscreteSlider: FC<SliperProps> = ({ rgb, setRgb }) => {
         Синий
       </Typography>
       <Slider
-      onChange={handleChangeBlue}
+        onChange={handleChangeBlue}
         defaultValue={0}
         value={rgb.blue}
         getAriaValueText={valuetext}
@@ -99,7 +102,7 @@ const DiscreteSlider: FC<SliperProps> = ({ rgb, setRgb }) => {
         Прозрачность
       </Typography>
       <Slider
-      onChange={handleChangeOpac}
+        onChange={handleChangeOpac}
         defaultValue={1}
         value={rgb.opacity}
         getAriaValueText={valuetext}

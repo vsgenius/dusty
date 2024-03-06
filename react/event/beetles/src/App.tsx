@@ -14,8 +14,8 @@ function App() {
     setEndGame(false);
     setStart(Date.now());
     for (let i = 0; i < 10; i++) {
-      const width = Math.round(Math.random() * window.innerWidth-20);
-      const height = Math.round(Math.random() * window.innerHeight-20);
+      const width = Math.round(Math.random() * window.innerWidth - 20);
+      const height = Math.round(Math.random() * window.innerHeight - 20);
       setArrBeetkes((prev) => {
         return [...prev, [width, height]];
       });
