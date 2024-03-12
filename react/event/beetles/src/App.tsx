@@ -1,26 +1,29 @@
 import React, { useState } from 'react';
-import { Beetles } from './components/Beetles';
+import { Beetles } from './components/Beetle/Beetles';
 import type { MouseEvent } from 'react';
 
 import './App.css';
 
-function App() {
-  const [arrBeetles, setArrBeetkes] = useState<number[][]>([]);
-  const [endGame, setEndGame] = useState(true);
-  const [start, setStart] = useState(0);
-  const [duration, setDuration] = useState('');
+export type Beetle = {
+  top: number;
+  left: number;
+};
 
-  const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
-    setEndGame(false);
-    setStart(Date.now());
+function App() {
+  const [arrBeetles, setArrBeetles] = useState<Beetle[]>([]);
+  const [startGame, setStartGame] = useState(false);
+
+  const getBeetles = () => {
+    setStartGame(true);
     for (let i = 0; i < 10; i++) {
-      const width = Math.round(Math.random() * window.innerWidth - 20);
-      const height = Math.round(Math.random() * window.innerHeight - 20);
-      setArrBeetkes((prev) => {
-        return [...prev, [width, height]];
+      const left = Math.round(Math.random() * window.innerWidth - 20);
+      const top = Math.round(Math.random() * window.innerHeight - 20);
+      setArrBeetles((prev) => {
+        return [...prev, { top, left }];
       });
     }
   };
+
   function msToTime(duration: number) {
     let milliseconds: number | string = Math.floor((duration % 1000) / 100);
     let seconds: number | string = Math.floor((duration / 1000) % 60);
@@ -31,28 +34,19 @@ function App() {
     seconds = seconds < 10 ? '0' + seconds : seconds;
     return hours + ':' + minutes + ':' + seconds + '.' + milliseconds;
   }
-  const getDuration = () => {
-    if (!duration) {
-      const time = Date.now() - start;
-      setDuration(msToTime(time));
-      setTimeout(() => {
-        setDuration('');
-      }, 5000);
-    }
-  };
+
   return (
     <div className="App">
-      {endGame && (
-        <button className="button" onClick={handleClick}>
+      {!startGame && (
+        <button className="button" onClick={getBeetles}>
           {' '}
           новая игра
         </button>
       )}
-      {duration ? <p>Длительность {duration}</p> : ''}
       <Beetles
         arrBeetles={arrBeetles}
-        setEndGame={setEndGame}
-        getDuration={getDuration}
+        setArrBeetles={setArrBeetles}
+        setStartGame={setStartGame}
       />
     </div>
   );
