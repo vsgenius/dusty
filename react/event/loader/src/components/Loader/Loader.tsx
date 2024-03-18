@@ -1,4 +1,5 @@
 import React from 'react';
+import type {Dispatch,SetStateAction} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import LinearProgress, {
   LinearProgressProps,
@@ -9,7 +10,7 @@ import Box from '@material-ui/core/Box';
 import { FC } from 'react';
 
 function LinearProgressWithLabel(
-  props: LinearProgressProps & { value: number }
+  props: LinearProgressProps & { value: number}
 ) {
   return (
     <Box display="flex" alignItems="center">
@@ -32,15 +33,14 @@ const useStyles = makeStyles({
 });
 
 type LinearProps = {
-  prosent: number;
+  percent: number;
 };
 
-const LinearWithValueLabel: FC<LinearProps> = ({ prosent }) => {
+const LinearWithValueLabel: FC<LinearProps> = ({ percent}) => {
   const classes = useStyles();
-
   return (
     <div className={classes.root}>
-      <LinearProgressWithLabel value={prosent} />
+      <LinearProgressWithLabel value={percent}/>
     </div>
   );
 };
