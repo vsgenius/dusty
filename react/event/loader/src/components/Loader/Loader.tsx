@@ -1,5 +1,6 @@
 import React from 'react';
-import type {Dispatch,SetStateAction} from 'react';
+import { useState } from 'react';
+import type { Dispatch, KeyboardEvent, SetStateAction } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import LinearProgress, {
   LinearProgressProps,
@@ -10,7 +11,7 @@ import Box from '@material-ui/core/Box';
 import { FC } from 'react';
 
 function LinearProgressWithLabel(
-  props: LinearProgressProps & { value: number}
+  props: LinearProgressProps & { value: number }
 ) {
   return (
     <Box display="flex" alignItems="center">
@@ -33,14 +34,34 @@ const useStyles = makeStyles({
 });
 
 type LinearProps = {
-  percent: number;
+  setLoadComplete: Dispatch<SetStateAction<boolean>>;
 };
 
-const LinearWithValueLabel: FC<LinearProps> = ({ percent}) => {
+const LinearWithValueLabel: FC<LinearProps> = ({ setLoadComplete }) => {
   const classes = useStyles();
+  const [percent, setPercent] = useState(0);
+  const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === 'ArrowRight') {
+      setPercent((prev) => {
+        if (prev + 1 > 100) {
+          setLoadComplete(true);
+          return prev;
+        } else {
+          return prev + 1;
+        }
+      });
+      return;
+    }
+    if (event.key === 'ArrowLeft') {
+      setPercent((prev) => (prev - 1 < 0 ? prev : prev - 1));
+      return;
+    }
+  };
   return (
-    <div className={classes.root}>
-      <LinearProgressWithLabel value={percent}/>
+    <div className="App-header" onKeyDown={handleKeyDown} tabIndex={0}>
+      <div className={classes.root}>
+        <LinearProgressWithLabel value={percent} />
+      </div>
     </div>
   );
 };

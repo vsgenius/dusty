@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Beetles } from './components/Beetle/Beetles';
+import { Beetles } from './components/Beetles/Beetles';
 import type { MouseEvent } from 'react';
 
 import './App.css';
