@@ -2,6 +2,8 @@ const currentRate = document.querySelector('.current-rate');
 const loading = document.querySelector('.loading');
 const error = document.querySelector('.error');
 
+const TIMER_DURATION = 5000;
+
 function getMoney() {
   loading.classList.remove('hidden');
   error.classList.add('hidden');
@@ -21,5 +23,5 @@ window.addEventListener('DOMContentLoaded', () => {
   getMoney();
   setInterval(() => {
     getMoney();
-  }, 5000);
+  }, TIMER_DURATION);
 });
