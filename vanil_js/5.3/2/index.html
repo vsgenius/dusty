@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div>
         <p>Текущий курс:</p>
         <p class="current-rate">0</p>
     </div>
+    <div class="loading hidden">Загрузка</div>
+    <div class="error hidden">Ошибка при отправке запроса</div>
     <script src="./env.js"></script>
     <script src="./script.js"></script>
 </body>

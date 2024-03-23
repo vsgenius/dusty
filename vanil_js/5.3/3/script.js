@@ -1,7 +1,7 @@
 const currentRate = document.querySelector('.current-rate');
 
 function getMoney() {
-   fetch('http://api.wordnik.com/v4/words.json/randomWord?api_key='+API_KEY)
+  fetch('http://api.wordnik.com/v4/words.json/randomWord?api_key=' + API_KEY)
     .then((response) => response.json())
     .then((result) => {
       console.log(result);
@@ -11,12 +11,11 @@ function getMoney() {
   //   .then((result) => {
   //     console.log(result);
   //   });
-
 }
 
-window.onload = () => {
+window.addEventListener('DOMContentLoaded', () => {
   getMoney();
   setInterval(() => {
     getMoney();
   }, 10000);
-};
+});

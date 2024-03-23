@@ -11,13 +11,8 @@ type ButtonProps = {
 };
 
 const Button: FC<ButtonProps> = ({ state, secondary, dark }) => {
-  const classBtn = [
-    dark === 'dark' ? 'dark' : 'light',
-    secondary === 'secondary' ? 'secondary' : 'primary',
-    state,
-  ];
   return (
-    <button className={cnButton('Main', classBtn.join('_'))}>Hello</button>
+    <button className={cnButton({ dark, secondary, state })}>Hello</button>
   );
 };
 
