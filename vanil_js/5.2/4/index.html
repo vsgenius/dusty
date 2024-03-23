@@ -4,15 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Калькулятор</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div class="form-group">
-      <input class="first-number" type="text"/>
-      <input class="second-number" type="text"/>
-      <button class="btn">Посчитать</button>
+      <input class="first-number" type="text" />
+      <input class="second-number" type="text" />
+      <button class="btn">=</button>
+      <div class="block-result"></div>
     </div>
-    <div class="block-result">
-    </div>
+    <div class="loading hidden">Загрузка</div>
+    <div class="error hidden">Ошибка при отправке запроса</div>
     <script src="script.js"></script>
   </body>
 </html>

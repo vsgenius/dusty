@@ -1,0 +1,15 @@
+.form-group {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.block-result {
+  margin-left: 5px;
+  font-weight: 800;
+}
+.hidden {
+  display: none;
+}
+.error {
+  color: red;
+}
