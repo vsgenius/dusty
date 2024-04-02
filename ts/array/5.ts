@@ -1,5 +1,5 @@
 console.log('Задание 5');
-function getTicket(count: number = 5, to: number = 99) {
+function getTicket(count: number = 5, to: number = 99): number[] {
   let ticket: number[] = [];
   for (let i = 0; i < count; i++) {
     let temp = Math.floor(Math.random() * to);
@@ -12,7 +12,7 @@ type listUserType = {
   [key: string]: number[];
 };
 
-function addUsers(listUser: listUserType) {
+function addUsers(listUser: listUserType): void {
   while (true) {
     let name = prompt('Введите ваше имя');
     if (name === null) return;
@@ -20,10 +20,10 @@ function addUsers(listUser: listUserType) {
     alert('Ваш билет: ' + listUser[name].join(', '));
   }
 }
-function getNumber() {
+function getNumber(): number {
   return Math.floor(Math.random() * 99);
 }
-function checkUsers(listUser: listUserType, number: number, winer: string[]) {
+function checkUsers(listUser: listUserType, number: number, winer: string[]): number {
   for (const [key, value] of Object.entries(listUser)) {
     if (value.indexOf(number) != -1) {
       value.splice(value.indexOf(number), 1);
@@ -32,9 +32,9 @@ function checkUsers(listUser: listUserType, number: number, winer: string[]) {
     if (value.length == 1) console.log('Билет ', key, '- осталась одна цифра');
     if (value.length == 0) winer.push(key);
   }
-  return winer.length == 0 ? false : true;
+  return winer.length;
 }
-function lottery(listUser: listUserType) {
+function lottery(listUser: listUserType): void {
   let lotteryNumber: number[] = [];
   let winer: string[] = [];
   while (true) {
@@ -50,7 +50,7 @@ function lottery(listUser: listUserType) {
     }
   }
 }
-function game() {
+function game(): void {
   let listUser = {};
   addUsers(listUser);
   if (Object.keys(listUser).length > 0) lottery(listUser);

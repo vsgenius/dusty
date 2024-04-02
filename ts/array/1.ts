@@ -1,4 +1,4 @@
-const emojis:string[] = [
+const emojis = [
   '💘',
   '💝',
   '💖',
@@ -1528,8 +1528,12 @@ const emojis:string[] = [
   '👤',
   '👥',
   '👣',
-];
-let list:string[] = [];
+] as const;
+
+type EmojiType = typeof emojis[number];
+
+let list: EmojiType[] = [];
+
 for (let i = 0; i < 10; i++) {
   list.push(emojis[Math.floor(Math.random() * emojis.length)]);
 }

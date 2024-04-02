@@ -1,6 +1,7 @@
 console.log('Задание 4');
-function check(str: string) {
+function check(str: string): string {
   let iter = [];
+  
   for (let ch of str) {
     if (iter.length == 0) {
       iter.push(ch);

@@ -1,6 +1,6 @@
 //2648. Generate Fibonacci Sequence
 
-function* generateSequence() {
+function* generateSequence(): Generator<number> {
   let n:number = 0;
   let pred: number = 0;
   let predPred: number = 0;
