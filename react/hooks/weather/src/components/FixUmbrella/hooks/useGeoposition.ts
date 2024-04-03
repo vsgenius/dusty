@@ -1,21 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 type GeoType = {
-  latitude:number;
-  longitude:number;
+  lat:number;
+  lon:number;
 }
 
-
-const useGeolocation = () => {
+const useGeoposition = () => {
   const [coord, setCoord] = useState<GeoType | undefined>(undefined);
+
   useEffect(()=>{
     navigator.geolocation.getCurrentPosition(function (position) {
       const {latitude,longitude} = position.coords;
       
-      setCoord({latitude,longitude})
+      setCoord({lat:latitude,lon:longitude})
     });
   },[])
   return coord
-
 }
-export { useGeolocation }
+export { useGeoposition }

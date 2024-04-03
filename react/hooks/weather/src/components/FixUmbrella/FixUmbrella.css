@@ -1,0 +1,24 @@
+.FixUmbrella {
+  display: flex;
+  flex-direction: column;
+}
+  
+.FixUmbrella-City {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.FixUmbrella-CityButton {
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: #282c34;
+  border: 1px solid white;
+  cursor: pointer;
+  color: aliceblue;
+}
+
+.FixUmbrella-BlockEdit {
+  display: flex;
+  align-items: center;
+}
