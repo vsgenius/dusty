@@ -13,7 +13,7 @@ const useGetCity = (): [city: string | undefined, changeCoordsCity: (value: Coor
   useEffect(() => {
     if (!coords) return;
     fetch(
-      `https://catalog.api.2gis.com/3.0/items/geocode?lat=${coords.lat}&lon=${coords.lon}6&fields=items.point&key=58a0f9ab-2cf2-4bb9-91ec-c9a670788462`
+      `https://catalog.api.2gis.com/3.0/items/geocode?lat=${coords.lat}&lon=${coords.lon}6&fields=items.point&key=key`
     )
       .then((response) => response.json())
       .then((res) => {
