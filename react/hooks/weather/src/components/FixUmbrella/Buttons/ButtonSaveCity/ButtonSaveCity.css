@@ -1,0 +1,8 @@
+.ButtonSaveCity {
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #282c34;
+    border: 1px solid white;
+    cursor: pointer;
+    color: aliceblue;
+}

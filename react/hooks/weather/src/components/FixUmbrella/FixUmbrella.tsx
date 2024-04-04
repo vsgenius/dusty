@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import locationImg from './img/location-arrow-solid.svg';
-import checkImg from './img/check-solid.svg';
 import { cnFixUmbrella } from './FixUmbrella.classname';
 import { useGeoposition } from './hooks/useGeoposition';
 import { useWeather } from './hooks/useWeather';
-import { Suggest } from './Suggest/Suggest';
 import { useGetCity } from './hooks/useGetCity';
 
 import './FixUmbrella.css';
+import { BlockCity } from './Blocks/BlockCity/BlockCity';
+import { BlockWeather } from './Blocks/BlockWeather/BlockWeather';
 
 export type CoordsType = {
   lat: number;
@@ -42,31 +41,20 @@ function FixUmbrella() {
   }
 
   const changeEditFlag = () => {
-    setEditFlag(true);
+    setEditFlag(!editFlag);
   }
 
-  const saveSuggestCity = () => {
-    setEditFlag(false);
-  }
 
   return (
     <div className={cnFixUmbrella()}>
-      <div className={cnFixUmbrella('City')}>
-        <button className={cnFixUmbrella('CityButton')} onClick={getCurrentPosition}>
-          <img style={{ width: '20px' }} src={locationImg} alt="location" />
-        </button>
-        {!editFlag ? <p onClick={changeEditFlag}>{city ? city : 'Выберите город'}</p> : 
-        <div className={cnFixUmbrella('BlockEdit')}>
-          <Suggest city={city ? city : ''} changeSuggest={changeSuggest}/>
-          <button className={cnFixUmbrella('CityButton')} onClick={saveSuggestCity}>
-            <img style={{ width: '20px' }} src={checkImg} alt="location" />
-          </button>
-        </div>}
-      </div>
-      <div className={cnFixUmbrella('Weather')}>
-        <p>Температура</p>
-        <p>{weather.valueWeather ? weather.valueWeather : '-'}</p>
-      </div>
+      <BlockCity 
+        editFlag={editFlag} 
+        changeEditFlag={changeEditFlag} 
+        city={city} 
+        getCurrentPosition={getCurrentPosition}
+        changeSuggest={changeSuggest}
+      />
+      <BlockWeather weather={weather}/>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { CoordsType } from '../FixUmbrella';
 
-type changeCoordsReturnType = {
+export type changeCoordsReturnType = {
   valueWeather: number | undefined;
   changeCoords: (value: CoordsType) => void
 };
