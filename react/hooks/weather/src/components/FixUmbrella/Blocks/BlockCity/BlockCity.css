@@ -3,3 +3,15 @@
     align-items: center;
     gap: 10px;
   }
+
+.BlockCity-Main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.BlockCity-MainEdit {
+  font-size: 0.7rem;
+  text-decoration:underline;
+  cursor: pointer;
+}

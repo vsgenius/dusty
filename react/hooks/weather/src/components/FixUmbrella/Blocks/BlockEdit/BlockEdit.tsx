@@ -17,7 +17,6 @@ const BlockEdit:FC<BlockEditProps> = ({ city,  changeSuggest, saveSuggestCity })
   return (
     <div className={cnBlockEdit()}>
       <Suggest city={city ? city : ''} changeSuggest={changeSuggest}/>
-      <ButtonSaveCity saveSuggestCity={saveSuggestCity}/>
     </div>
   )
 }

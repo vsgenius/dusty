@@ -18,8 +18,12 @@ const BlockCity:FC<BlockCityProps> = ({editFlag, changeEditFlag, city, getCurren
   return (
     <div className={cnBlockCity()}>
       <ButtonGeo getCurrentPosition={getCurrentPosition}/>
-      {!editFlag ? <p onClick={changeEditFlag}>{city ? city : 'Выберите город'}</p> : 
-      <BlockEdit city={city}  changeSuggest={changeSuggest} saveSuggestCity={changeEditFlag} />}
+      {!editFlag ? 
+      <div className={cnBlockCity('Main')}>
+        <p onClick={changeEditFlag}>{city ? city : ('Нажмите, чтобы установить город')}</p> 
+        {city && <p className={cnBlockCity('MainEdit')} onClick={changeEditFlag}>Изменить</p>}
+      </div>
+      : <BlockEdit city={city}  changeSuggest={changeSuggest} saveSuggestCity={changeEditFlag} />}
   </div>
   )
 }

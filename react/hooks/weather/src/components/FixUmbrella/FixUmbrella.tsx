@@ -18,31 +18,38 @@ function FixUmbrella() {
   const [city, setCity] = useState<string | undefined>(undefined);
   const [editFlag, setEditFlag] = useState(false);
   const [coordsCity, changeCoordsCity] = useGetCity();
-  const geo = useGeoposition();
   const weather = useWeather();
-
-  useEffect(() => {
-    if (!coords) return;
-    weather.changeCoords(coords);
-  }, [coords,weather]);
+  const geo = useGeoposition();
 
   const changeSuggest = (suggestion:any) => {
     if(!suggestion[0].coords || !suggestion[0].name) return;
+    setEditFlag(!editFlag);
     setCity(suggestion[0].name);
     setCoords(suggestion[0].coords);
   }
 
   const getCurrentPosition = () => {
-    if (!geo) return;
-    setEditFlag(false);
-    setCoords(geo);
-    changeCoordsCity(geo);
+      setCoords(geo);
+  }
+
+  const getCity = () => {
+    if (!coords) return;
+    changeCoordsCity(coords);
     setCity(coordsCity);
   }
 
   const changeEditFlag = () => {
     setEditFlag(!editFlag);
   }
+
+  useEffect(() => {
+    if (!coords) {
+      getCurrentPosition();
+      return;
+    }
+    getCity();
+    weather.changeCoords(coords);
+  }, [weather, editFlag, coords]);
 
 
   return (
