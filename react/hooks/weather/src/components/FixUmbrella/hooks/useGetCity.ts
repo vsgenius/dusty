@@ -19,6 +19,9 @@ const useGetCity = (): [city: string | undefined, changeCoordsCity: (value: Coor
       .then((res) => {
         const data = res.result.items;
         setCity(data.filter((item:any) => item.subtype === 'city')[0].name);
+      })
+      .catch(()=>{
+        setCity('Город не определен ошибка Api');
       });
  
   }, [coords]);

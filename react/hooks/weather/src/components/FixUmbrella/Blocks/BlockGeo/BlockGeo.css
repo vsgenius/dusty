@@ -1,0 +1,11 @@
+.BlockGeo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.BlockGeo-Main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

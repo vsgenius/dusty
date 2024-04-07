@@ -8,7 +8,7 @@ import './BlockEdit.css';
 
 type BlockEditProps  = {
   city: string | undefined;
-  changeSuggest: (suggestion:any) => void;
+  changeSuggest: (suggestion: any) => void;
   saveSuggestCity: () => void;
 }
 
